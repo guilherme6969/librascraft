@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, inicial-scale-to-fit-no">
-    <title>Librascraft</title>
-	<link href="css/bootstrap.min.css" rel="stylesssheet"/>
-	
-	<script src='js/jquery-3.4.1min.js'></script>
-	<script src="js/bootstrap.min.js"></script>
+<?php
+    include("menu.php");
+?>
 	
 	<style>
 	body {
@@ -21,7 +14,15 @@
 	</style>
 </head>
 <body>
-
+<div class="container">
+  <div class="row justify-content-center">
+  <div class="col-8 border border-warning bg-white h-100 d-inline-block">
+	
+	<h2>"Meu Sofá está velho"</h2>
+	<h1>"SOFA"</h1>
+  </div>
+</div>
+</div>
 
 </body>
 </html>
