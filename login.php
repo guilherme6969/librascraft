@@ -35,7 +35,7 @@ include("conexao.php");
                     <button class="btn btn-lg btn-primary btn-block text-uppercase" style="border-color:#828282;background-color:#828282;" type="submit">Entrar</button>
                     <hr class="my-4">
                     <div class= "" style="color:#828282; text-align:center;"<label for="cadastras ">Ainda não é cadastrado? Cadastre-se já!</label></div>
-                    <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='form_cadastro.php'"><i class="fab fa-google mr-2"></i> Cadastrar-se</button>
+                    <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='form_cadastro_usuario.php'"><i class="fab fa-google mr-2"></i> Cadastrar-se</button>
                     </form>
                 </div>
                 </div>
