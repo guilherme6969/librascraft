@@ -1,3 +1,7 @@
+<?php
+$img_palavra = "sofa.jpeg";
+$palavra = "Sofa";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,7 +26,7 @@
 </head>
 <body>
 	<!-- A - div principal-->
-	<div class="container align-middle">
+	<div class="container mt-5 align-middle">
 		<!-- B (filha da principal - A)-->
 		<div class="row justify-content-center ">
 			<div class="row">
@@ -35,31 +39,29 @@
 							<div class="col py-3 px-md-3 border bg-light d-flex flex-column justify-content-center align-items-center">
 								<table border="1">
 									<tr>
-										<td><h1>S</h1></td>
-										<td><h1>O</h1></td>
-										<td><h1>F</h1></td>
-										<td><h1>Á</h1></td>
+										<?php for($i=0;$i<strlen($palavra);$i++){ echo "<td>".$palavra[$i]."</td>"; } ?>
 									</tr>
 									<tr>
-										<td><img src="img/s.jpeg" alt="..."></td>
-										<td><img src="img/o.jpeg" alt="..."></td>
-										<td><img src="img/f.jpeg" alt="..."></td>
-										<td><img src="img/a.jpeg" alt="..."></td>
+									<?php for($i=0;$i<strlen($palavra);$i++){ echo "<td><img src='img/".$palavra[$i].".jpeg' /></td>"; } ?>
 									</tr>
 								</table>
 							</div>
 						</div>
 						<div class="row mt-4 mx-md-n5">
 							<div class="col py-3 px-md-3 border bg-light d-flex flex-column justify-content-center align-items-center">
-								<img src="img/image_sofa.jpeg" class="rounded float-left">
+								<img src="img/<?php echo $img_palavra;?>" class="rounded float-left">
 							</div>
 							<div class="col py-3 px-md-3 border bg-light">
 								<iframe width="400" height="200" src="https://www.youtube.com/embed/Xxiry0x6jxE" class="rounded float-right" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
+							</div>	
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="col d-flex justify-content-center mt-2 align-items-center">
+				<button type="button" src="" class="rounded ">Anterior</button>
+				<button type="button" src="" class="rounded ml-5 ">Proxima</button>
 		</div>
 	</div>
 </div>
