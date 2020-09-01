@@ -79,23 +79,23 @@
                 <h5 class="card-title text-center"style="color:#828282;">Cadastre-se no LibrasCraft!</h5>
                 <form class="form-signin">
                 <div class="form-label-group" style="color:#828282;">
-                    <input type="text" id="nome" class="form-control " name = "nome" placeholder="Nome" required autofocus>
-                    <label for="inputNome">Nome</label>
+                    <input type="text" id="nome" class="form-control " name = "nome" placeholder="Digite seu nome..." required autofocus>
+                    
                 </div>
             <!-- EMAIIL -->
                 <div class="form-label-group" style="color:#828282;">
-                    <input type="text" id="email" class="form-control" name = "email" placeholder="Email" required autofocus>
-                    <label for="inputEmail">Endereço de Email</label>
+                    <input type="text" id="email" class="form-control" name = "email" placeholder="Digite seu email..." required autofocus>
+                    
                 </div>
             <!-- SENHA -->
                 <div class="form-label-group" style="color:#828282;">
-                    <input type="password" id="senha" class="form-control " name = "senha" placeholder="Senha" required autofocus>
+                    <input type="password" id="senha" class="form-control " name = "senha" placeholder="Digite sua senha..." required autofocus>
                     <label for="inputSenha">Senha</label>
                 </div>
             <!-- DATA NASCIMENTO -->
                 <div class="form-label-group" style="color:#828282;">
-                    <input type="date" id="data" class="form-control " name = "data_nascimento" placeholder="Data de Nascimento" required autofocus>
-                    <label for="inputData">Data de Nascimento</label>
+					<label for="inputData">Data de Nascimento</label>
+                    <input type="date" id="data" class="form-contro <label for="inputData">Data de Nascimento</label>
                 </div>
 
             <!-- SEXO -->
@@ -126,7 +126,7 @@
                 
                 
             <!-- BOTAO CADASTRAR -->
-                <button class=" btn_cadastra btn btn-lg btn-primary btn-block text-uppercase "  type="submit" id="btn_cadastra" style="border-color:#828282;background-color:#828282;">Cadastrar</button>
+                <button class=" btn_cadastra btn btn-lg btn-primary btn-block text-uppercase "  type="button" id="btn_cadastra" style="border-color:#828282;background-color:#828282;">Cadastrar</button>
             </form>
                 <div id = "status"></div>
 

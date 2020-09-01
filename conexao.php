@@ -1,7 +1,7 @@
 <?php
 
     //local no qual o banco de dados está instalado
-    $local = "localhost:3307";
+    $local = "localhost:3306";
     $usuario = "root";
     $senha = "usbw";
     $bd = "librascraft";
