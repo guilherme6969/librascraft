@@ -27,19 +27,19 @@ session_start();
 
     <div class="container">
         <div class="row">
-            <div class="ajuda">
+            <div class="ajuda"><!-- ICONE AJUDA -->
             <a href="ajuda.php"><img src="img/icones/menu/ajuda.png" style="width:5%; margin-top:-85px; margin-left:1130px;"></a>
             </div>
         </div>
 
          <div class="row">
-            <div class="ajuda">
-            <a href="mapa.php"><img src="img/icones/menu/icone_sair.png" style="width:3%; margin-top:-135px; margin-left:1250px;"></a>
+            <div class="voltar"><!-- ICONE VOLTAR -->
+            <a href="javascript:history.back()"><img src="img/icones/menu/icone_sair.png" style="width:3%; margin-top:-135px; margin-left:1100px;"></a>
             </div>
         </div>
         <div class="row">
-            <div class="libras">
-            <a href="index.php"><img src="img/icones/librascraft.png" style="width:45%; margin-top:-175px; margin-left:-160px;"></a>
+            <div class="logo"><!-- ICONE LIBRASCRAFT -->
+            <a href="index.php"><img src="img/icones/librascraft.png" style="width:45%; margin-top:-177px; margin-left:-50px;"></a>
             </div>
         </div>
     </div>

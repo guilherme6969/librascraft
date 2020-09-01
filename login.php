@@ -2,13 +2,15 @@
 
 include("menu.php");
 include("conexao.php");
+
 ?>
 
     <style>
     body
     {
         background:url("img/login_cadastro.png")  no-repeat;
-        background-size: 100%;
+        width:100%; 
+        overflow: hidden;
 
     }
     </style>

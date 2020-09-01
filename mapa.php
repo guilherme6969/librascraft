@@ -1,16 +1,17 @@
 <?php
+    include("conexao.php");
     include("menu.php");
+    include("menu_mapa.php");
 ?>
 
 	<style>
-	body {
+	body 
+  {
     background: url("img/mapa.png") no-repeat;
+    width:100%; 
+    overflow: hidden;
+  }
 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
 	</style>
 </head>
 <body>
