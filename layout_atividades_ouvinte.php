@@ -1,6 +1,5 @@
 <?php
 include("menu.php");
-$palavra = "ATIVADES-OUVINTES";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,27 +29,21 @@ $palavra = "ATIVADES-OUVINTES";
 			
 						<div class="row">
 							<div class="col py-5 px-md-5 border bg-light d-flex flex-column justify-content-center align-items-center">
-								
-									<tr>
-										<?php for($i=0;$i<strlen($palavra);$i++){ echo "<th>".$palavra[$i]."</th>"; } ?>
-									</tr>
-									<tr>
-									
-									</tr>
-								
+								<h1>ATIVIDADES-OUVINTES</h1>
 							</div>
 						</div>
-						
-							<div class="col py-6 px-md-6 border bg-light">
+						<div class="row">
+							<div class="col p-3 py-6 px-md-6">
 								<iframe width="500" height="300" class="rounded mx-auto d-block" src="https://www.youtube.com/embed/BdwGb6OgomU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
-					</div>
+						</div>
+					
 					<div class="row">
 						<div class="col d-flex justify-content-center mt-6 align-items-center">		
-								<button type="button" src="" class="btn btn-warning btn-google btn-block w-50 text-uppercase" style=" margin-left:50px;margin-top: 50px;">Cadeira</button>
-								<button type="button" src="" class="btn btn-success btn-google btn-block w-50 text-uppercase" style=" margin-left:50px;margin-top: 50px;">Fogao</button>
-								<button type="button" src="" class="btn btn-info btn-google btn-block w-50 text-uppercase" style=" margin-left:50px;margin-top: 50px;">Micro-Ondas</button>
-								<button type="button" src="" class="btn btn-danger btn-google btn-block w-50 text-uppercase" style=" margin-left:50px;margin-top: 50px;">Colher</button>
+								<button type="button" src="" class="btn btn-warning btn-google btn-block w-50 text-uppercase text-dark" style=" margin-left:50px;margin-top: 50px;">Cadeira</button>
+								<button type="button" src="" class="btn btn-success btn-google btn-block w-50 text-uppercase text-dark" style=" margin-left:50px;margin-top: 50px;">Fogao</button>
+								<button type="button" src="" class="btn btn-info btn-google btn-block w-50 text-uppercase text-dark" style=" margin-left:50px;margin-top: 50px;">Micro-Ondas</button>
+								<button type="button" src="" class="btn btn-danger btn-google btn-block w-50 text-uppercase text-dark" style=" margin-left:50px;margin-top: 50px;">Colher</button>
 						</div>
 								<button type="button" src="" class="rounded mx-auto d-block btn btn-dark btn-google btn-block w-50 text-uppercase" style=" margin-left:50px;margin-top: 50px;">Concluir</button>
 					</div>
