@@ -43,7 +43,6 @@
                     {
                         subnivel:$("select[name='cod_subfase']").val(),
                         palavra:$("input[name='palavra']").val(),
-                        figura:$("input[name='figura']").val(),
                         video_sinal:$("input[name='video_sinal']").val()
                        
                     },
@@ -53,7 +52,7 @@
                         console.log(data);
                         if(data==1)
                         {
-                            $("#status").html("Palavra cadastrada com sucesso!");
+                            alert("Palavra cadastrada com sucesso!");
                             $("#status").css("color","green");
                             $("#status").css("text-align","center");
                         }
@@ -148,12 +147,6 @@
                 <div class="form-label-group" style="color:#828282;">
                     <input type="text" id="palavra" class="form-control" name = "palavra" placeholder="Palavra" required autofocus>
                     <label for="inputEmail"></label>
-                </div>
-            <!-- FIGURA -->
-            <div class="form-label-group" style="color:#828282;">
-                    <label for="inputEmail">Imagem:
-                    <input type="file" id="imagem" class="form-control" name = "figura" placeholder="Imagem:" required autofocus>
-                    </label>
                 </div>
             <!-- VIDEO SINAL -->
             <div class="form-label-group" style="color:#828282;">

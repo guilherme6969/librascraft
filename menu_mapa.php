@@ -1,14 +1,25 @@
 <style>
 .abc
 {
-    margin-top:60px;
+    margin-top:10px;
     margin-left:143px;
+    opacity:1;
 }
+.abc:hover
+    {
+        opacity:0.5;
+    }
 .casa
 {
-    margin-top:222px;
+    margin-top:174px;
     margin-left:-70px;
+    opacity:1;
 }
+.casa:hover
+{
+    opacity:0.5;
+}
+
 
 
 </style>

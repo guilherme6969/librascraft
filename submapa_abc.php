@@ -13,13 +13,13 @@
     .alfabeto
     {
         margin-left:520px;
-        margin-top:-30px;
+        margin-top:-75px;
         
     }
     .numeral
     {
         margin-left:520px;
-        margin-top:10px;
+        margin-top:-15px;
         
     }
 

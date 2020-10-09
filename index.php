@@ -15,7 +15,7 @@ session_start();
         <style>
     html 
     {
-        background: url("img/index.png") no-repeat ;
+        background: url("img/index1.png") no-repeat ;
         width:100%; 
         overflow: hidden;
     }
@@ -26,85 +26,78 @@ session_start();
     .placa_esquerda
     {
         width:90%; 
-        margin-top:-480px;
-        margin-left:-10px;
+        margin-top:-440px;
+        margin-left:767px;
     }
     .placa_direita
     {
         width:90%; 
         margin-top:-200px;
-        margin-left:150px;
+        margin-left:900px;
     }
     .mapa
     {
-        margin-top:-236px;
-        margin-left:10px;
+        margin-top:-216px;
         font-size:30px;
+        margin-left:450px;
     }
     .logout
     {
-        margin-top:50px;
-        margin-left:-90px;
+        margin-top:30px;
         font-size:30px;
+        margin-left:644px;
     }
     .login
     {
-        margin-top:-236px;
-        margin-left:-40px;
+        margin-top:-216px;
         font-size:30px;
+        margin-left:430px;
     }
     .cadastro
     {
-        margin-top:50px;
-        margin-left:-60px;
-        font-size:30px;
+        margin-top:30px;
+        font-size:27px;
+        margin-left:630px;
     }
         </style>
     </head>
     <body>
         
-    <div class ="container">   
+    <div class ="container">   <!-- BARRA -->
         <div class="row">
             <div class="placa_cabo">
-                <img src="img/icones/placa/barra.png" style="width:43%; margin-top:185px; margin-left:750px;"></a>
+                <img src="img/icones/placa/barra.png" style="width:43%; margin-top:240px; margin-left:750px;"></a>
             </div>
         </div>
     </div>
-    <div class ="container">   
+    <div class ="container">   <!-- PLACA ESQUERDA -->
         <div class="row">
             <div class="placa_esquerda">
-                <img src="img/icones/placa/placa_esquerda.png" placeholder="login" style="width:30%; margin-top:0px; margin-left:777px;">
+                <img src="img/icones/placa/placa_esquerda.png" placeholder="login" style="width:30%;">
             </div>
         </div>        
     </div>
-    <div class ="container">   
+    <div class ="container">  <!-- PLACA DIREITA -->
         <div class="row">
             <div class="placa_direita">
-                <img src="img/icones/placa/placa_direita.png" style="width:32%; margin-top:0px; margin-left:760px;"></a>
+                <img src="img/icones/placa/placa_direita.png" style="width:32%;"></a>
             </div>
         </div>        
     </div>
 
     <div class="login">
     <?php
-        if(isset($_SESSION["autorizado2"]))
-        {
-            echo '<div class="login"><a href = "cadastro_palavra.php" style= "font-family:arial, Helvetica, sans-serif; color:black; margin-left:950px;">CADASTRO PALAVRA</a></div>';
-            echo '<div class="cadastro"><a href = "cadastro_atividade.php" style= "font-family:arial, Helvetica, sans-serif; color:black; margin-left:1184px;">CADASTRO ATIVIDADE</a></div>';
-        }
-
         if(isset($_SESSION["autorizado"]))
         {
-            echo '<div class="mapa"><a href = "mapa.php" style= "font-family:arial, Helvetica, sans-serif; color:black; margin-left:900px;">MAPA</a></div>';
-            echo '<div class="logout"><a href = "logout.php" style= "font-family:arial, Helvetica, sans-serif; color:black; margin-left:1234px;">LOGOUT</a></div>';
+            echo '<div class="mapa"><a href = "mapa.php" style= "font-family:arial, Helvetica, sans-serif; color:black;">MAPA</a></div>';
+            echo '<div class="logout"><a href = "logout.php" style= "font-family:arial, Helvetica, sans-serif; color:black;">LOGOUT</a></div>';
         }
         else{
-            echo '<div class="login"><a href = "login.php"style= "font-family:arial, Helvetica, sans-serif; color:black; margin-left:950px;">LOGIN</a></div>';
-            echo ' <div class="cadastro"><a href="form_cadastro_usuario.php" style= "font-family:arial, Helvetica, sans-serif; color:black; margin-left:1184px;">CADASTRO</a>
+            echo '<div class="login"><a href = "login.php"style= "font-family:arial, Helvetica, sans-serif; color:black;">LOGIN</a></div>';
+            echo ' <div class="cadastro"><a href="form_cadastro_usuario.php" style= "font-family:arial, Helvetica, sans-serif; color:black; ">CADASTRO</a>
             </div>';
         }
     ?>
     </div>
-
     </body>
 </html>

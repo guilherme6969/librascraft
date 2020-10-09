@@ -6,13 +6,13 @@
 <style>
 	body 
     {   
-        background: url("img/submapa_casa.png") no-repeat;
+        background: url("img/submapa_casa1.png") no-repeat;
         width:100%; 
         overflow: hidden;
     }
     .sala
     {
-        margin-top:90px;
+        margin-top:44px;
         margin-left:-27px;
         cursor:pointer;
         opacity:1;
@@ -22,20 +22,35 @@
         margin-top:-370px;
         margin-left:280px;
         cursor:pointer;
+        opacity:1;
     }
     .banheiro 
     {
         margin-top:-380px;
-        margin-left:551px;
+        margin-left:552px;
         cursor:pointer;
+        opacity:1;
     }
     .quarto 
     {
         margin-top:-377px;
         margin-left:828px;
         cursor:pointer;
+        opacity:1;
     }
     .sala:hover
+    {
+        opacity:0.5;
+    }
+    .cozinha:hover
+    {
+        opacity:0.5;
+    }
+    .banheiro:hover
+    {
+        opacity:0.5;
+    }
+    .quarto:hover
     {
         opacity:0.5;
     }
@@ -109,7 +124,7 @@
 <div class="container">
         <div class="row">
             <div class="cozinha">
-                <img id="btn-mensagem-cozinha" src="img/icones/casa/cozinha.png" data-toggle="modal" data-target="#modal-mensagem">
+                <img id="btn-mensagem-cozinha" src="img/icones/casa/cozinha1.png" data-toggle="modal" data-target="#modal-mensagem">
             </div>   
         </div>    
 </div>
@@ -139,7 +154,7 @@
 <div class="container">
         <div class="row">
             <div class="banheiro">
-                <img id="btn-mensagem-banheiro" src="img/icones/casa/banheiro.png" data-toggle="modal" data-target="#modal-mensagem">
+                <img id="btn-mensagem-banheiro" src="img/icones/casa/banheiro1.png" data-toggle="modal" data-target="#modal-mensagem">
             </div>   
         </div>    
 </div>
@@ -168,7 +183,7 @@
 <div class="container">
         <div class="row">
             <div class="quarto">
-                <img id="btn-mensagem-quarto" src="img/icones/casa/quarto.png" data-toggle="modal" data-target="#modal-mensagem">
+                <img id="btn-mensagem-quarto" src="img/icones/casa/quarto1.png" data-toggle="modal" data-target="#modal-mensagem">
             </div>   
         </div>    
 </div>

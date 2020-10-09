@@ -2,18 +2,22 @@
 include("conexao.php");
 include("menu.php");
 $pagina = $_GET["pagina"];
-$img_palavra = "video_game.png";
-$palavra = "video game";
+
 $consulta = "SELECT palavra FROM palavra WHERE cod_subfase = $pagina";
 $resultado = mysqli_query($conexao,$consulta) or die("Erro na consulta");
 $vetor = "palavras = new Array(";
 $count = 0;
-while($linha= mysqli_fetch_assoc($resultado))
+while($linha= mysqli_fetch_assoc($resultado)) // todas as palavras selecionadas na consulta
 {
     if($count!=0)
     {
         $vetor.=",";      
-    }
+	}
+	else		
+	{
+		$palavra=$linha["palavra"];
+		$img_palavra=strtolower(str_replace(" ", "_",$linha["palavra"])).".png"; // transforma tudo em minusculo
+	}							// str_replace substitui espaco por _ (só nesse caso)
     $count++;
     $vetor.="'".$linha["palavra"]."'";
 } 
@@ -22,7 +26,7 @@ $vetor.=");";
 <style>
 	body 
 	{
-		background: url("img/casa/sala/comodo/sala.png") no-repeat center top fixed;
+		background: url("img/casa/comodo/sala.png") no-repeat center top fixed;
 		width:100%; 
         overflow: hidden;
 	}
@@ -51,11 +55,49 @@ $vetor.=");";
             {
                 $("#proximo").hide();// ESCONDE BOTAO PROXIMO
             }
-            palavra=palavras[posicao];
-            $("#texto_letra").html(palavra.toUpperCase());
-            link_img="alfabeto/"+palavra+".png";
-            $("#img_letra").attr("src",link_img);
-        }
+			palavra=palavras[posicao];
+		
+			$("#texto_palavra").html(""); // limpa tabela 
+			tr="<tr>"; // troca a letra da tabela
+				for(i=0;i<palavra.length;i++) // faz a mesma coisa q strlen, pega o tamanho do vetor
+				{							  // strlen é para php, lenght é para java
+					tr+="<th>"+palavra[i]+"</th>";
+				}
+			tr+="</tr>";
+			
+			tr+="<tr>"; // troca a imagem da tabela
+				for(i=0;i<palavra.length;i++)
+				{
+					if(palavra[i]==" ")
+					{
+						tr+="<td><div style='width:20px;'></div> </td>";
+					}
+					else
+					{
+						tr+="<td><img src= 'img/alfabeto/"+palavra[i]+".gif' style='width:70px;' /></td>";
+					}
+					
+				}
+			tr+="</tr>";
+			$("#texto_palavra").html(tr);// muda o valor da tabela 
+			palavra= palavra.toLowerCase(); // transforma palavra em minuscula
+			palavra= palavra.normalize("NFD").replace(/[\u0300-\u036f]/g, ''); // transforma caracteres especiais de acentuação, tirando os acentos 	
+			palavra= palavra.replace(" ","_"); // troca espaco por _
+			link_img="img/objetos/"+palavra+".png";
+			console.log(link_img);
+            $("#img_palavra").attr("src",link_img);
+		}
+		$(document).ready(function(){
+			$("#proximo").click(function(){
+				troca_palavra(1);
+			});
+
+			$("#anterior").click(function(){
+				troca_palavra(-1);
+			});
+
+		});
+		
 </script>
 </head>
 <body>
@@ -68,12 +110,25 @@ $vetor.=");";
 						<div class="row">
 							<div class="col  px-md-3 border bg-light d-flex flex-column justify-content-center align-items-center">
 							<!-- INICIO TABELA-->
-								<table border="1" class = "table-bordered" style="text-align:center;text-transform:uppercase;"> 
+								<table border="1" class ="table-bordered" id="texto_palavra" style="text-align:center;text-transform:uppercase;"> 
 										<tr>
 											<?php for($i=0;$i<strlen($palavra);$i++){ echo "<th>".$palavra[$i]."</th>"; } ?>
-										</tr>
+										</tr> <!-- strlen pega o tamanho da palavra -->
 										<tr>
-										<?php for($i=0;$i<strlen($palavra);$i++){ echo "<td><img src='alfabeto/".$palavra[$i].".png' style='width:70px;'/></td>"; } ?>
+											<?php 
+																						
+												for($i=0;$i<strlen($palavra);$i++)
+												{ 
+													if($palavra[$i]==" ")
+													{
+														echo "<td><div style='width:20px;'></div></td>";
+													}
+													else
+													{	
+														echo "<td><img src='img/alfabeto/".$palavra[$i].".gif' style='width:70px;'/></td>"; 
+													} 												
+												}
+											?>
 										</tr>
 								</table>
 							</div>
@@ -81,7 +136,7 @@ $vetor.=");";
 							<!-- IMAGEM DO OBJETO -->
 							<div class="row mt-4 mx-md-n5">
 								<div class="col py-3 px-md-3 border bg-light d-flex flex-column justify-content-center align-items-center">
-									<img src="img/casa/sala/objetos/<?php echo $img_palavra;?>" class="rounded float-left" style="width:70%; margin-top:-70px;">
+									<img src="img/objetos/<?php echo $img_palavra;?>" class="rounded float-left" id="img_palavra" style="width:70%; margin-top:-70px;">
 								</div>
 								<!-- VIDEO EM LIBRAS -->
 								<div class="col py-3 px-md-3 border bg-light">
@@ -91,8 +146,8 @@ $vetor.=");";
 							</div>
 							<!-- BOTOES -->
 							<div class="col d-flex justify-content-center mt-2 align-items-center">
-								<button type="button" src="" class="btn btn-lg btn-google btn-block w-50 text-uppercase" style="border-color:#828282;background-color:#828282;color:white; margin-left:-10px;">Anterior</button>
-								<button type="button" src="" class="btn btn-lg btn-google btn-block w-50 text-uppercase" style="border-color:#828282;background-color:#828282;color:white; margin-left:50px;margin-top:-1px;">Próxima</button>
+								<button type="button" id="anterior" class="btn btn-lg btn-google btn-block w-50 text-uppercase" style="border-color:#828282;background-color:#828282;color:white; margin-left:-10px;">Anterior</button>
+								<button type="button" id="proximo" class="btn btn-lg btn-google btn-block w-50 text-uppercase" style="border-color:#828282;background-color:#828282;color:white; margin-left:50px;margin-top:-1px;">Próxima</button>
 							</div>
 					</div>
 				</div>

@@ -6,7 +6,7 @@
 <style>
     body
     {
-        background:url("img/login_cadastro.png")  no-repeat;
+        background:url("img/login_cadastro1.png")  no-repeat;
         width:100%; 
         overflow: hidden;
 
@@ -23,6 +23,27 @@
         // PAI DE TODOS -----------------------------------------------------------------------------------
         $(function(
         ){
+            $("input[name='email']").blur(function(){
+                $.get("validacao_email.php",{email:$(this).val()},function(data){// get mesma coisa que ajax, usa quando quer enviar os dados por GET
+                    
+                        if(data==1)
+                        {
+                            $("#status_email").html("Email válido");
+                            $("#status").css("color","green");
+
+                           
+                        }
+                        else
+                        {
+                            $("#status").html("Email invalido!");
+                            $("#status").css("color","red");
+    
+                        }
+                }) 
+            
+            });
+
+
 
             // CADASTRAR ---------------------------------------------------------------------------------
             $(document).on("click",".btn_cadastra",function(
@@ -46,15 +67,14 @@
                     {
                         if(data==1)
                         {
-                            $("#status").html("USUÁRIO CADASTRADO COM SUCESSO!");
-                            $("#status").css("color","green");
+                            alert("USUÁRIO CADASTRADO COM SUCESSO!")
 
                            
                         }
                         else
                         {
-                            $("#status").html("ERRO");
-                            $("#status").css("color","red");
+                            alert("ERRO");
+    
                         }
                     },
                     error:function(e)
@@ -79,23 +99,27 @@
                 <h5 class="card-title text-center"style="color:#828282;">Cadastre-se no LibrasCraft!</h5>
                 <form class="form-signin">
                 <div class="form-label-group" style="color:#828282;">
+                <label for="inputNome">Nome:</label>
                     <input type="text" id="nome" class="form-control " name = "nome" placeholder="Nome" required autofocus>
-                    <label for="inputNome">Nome</label>
+                <br />
                 </div>
             <!-- EMAIIL -->
                 <div class="form-label-group" style="color:#828282;">
+                <label for="inputEmail">Endereço de Email</label><div id="status_email"></div>
                     <input type="text" id="email" class="form-control" name = "email" placeholder="Email" required autofocus>
-                    <label for="inputEmail">Endereço de Email</label>
+                   <br />
                 </div>
             <!-- SENHA -->
-                <div class="form-label-group" style="color:#828282;">
+                <div class="form-label-group" style="color:#828282;" action="validacao_email.php">
+                <label for="inputSenha">Senha</label>
                     <input type="password" id="senha" class="form-control " name = "senha" placeholder="Senha" required autofocus>
-                    <label for="inputSenha">Senha</label>
+                   <br />
                 </div>
             <!-- DATA NASCIMENTO -->
                 <div class="form-label-group" style="color:#828282;">
+                <label for="inputData">Data de Nascimento</label>
                     <input type="date" id="data" class="form-control " name = "data_nascimento" placeholder="Data de Nascimento" required autofocus>
-                    <label for="inputData">Data de Nascimento</label>
+                    <br />
                 </div>
 
             <!-- SEXO -->

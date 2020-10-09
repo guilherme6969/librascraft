@@ -7,7 +7,7 @@
 	<style>
 	body 
   {
-    background: url("img/mapa.png") no-repeat;
+    background: url("img/mapa1.png") no-repeat;
     width:100%; 
     overflow: hidden;
   }
