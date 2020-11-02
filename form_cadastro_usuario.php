@@ -14,7 +14,7 @@
 </style>
 
 
-
+<script src="js/md5.js"></script>
     <script>
 
         var id = null;
@@ -23,27 +23,6 @@
         // PAI DE TODOS -----------------------------------------------------------------------------------
         $(function(
         ){
-            $("input[name='email']").blur(function(){
-                $.get("validacao_email.php",{email:$(this).val()},function(data){// get mesma coisa que ajax, usa quando quer enviar os dados por GET
-                    
-                        if(data==1)
-                        {
-                            $("#status_email").html("Email válido");
-                            $("#status").css("color","green");
-
-                           
-                        }
-                        else
-                        {
-                            $("#status").html("Email invalido!");
-                            $("#status").css("color","red");
-    
-                        }
-                }) 
-            
-            });
-
-
 
             // CADASTRAR ---------------------------------------------------------------------------------
             $(document).on("click",".btn_cadastra",function(
@@ -57,7 +36,7 @@
                     {
                         nome: $("input[name='nome']").val(),
                         email:$("input[name='email']").val(),
-                        senha:$("input[name='senha']").val(),
+                        senha:$.MD5($("input[name='senha']").val()),
                         sexo:$("input[name='sexo']:checked").val(),
                         data_n:$("input[name='data_nascimento']").val(),
                         condicao:$("input[name='condicao_auditiva']:checked").val()
@@ -67,14 +46,15 @@
                     {
                         if(data==1)
                         {
-                            alert("USUÁRIO CADASTRADO COM SUCESSO!")
-
-                           
+                            $("#status").html("USUÁRIO CADASTRADO COM SUCESSO!")
+                            $("#status").css("color","green");
+                            $("#status").css("text-align","center");
                         }
                         else
                         {
-                            alert("ERRO");
-    
+                            $("#status").html("ERRO AO CADASTRAR")
+                            $("#status").css("color","red");
+                            $("#status").css("text-align","center");
                         }
                     },
                     error:function(e)
@@ -92,13 +72,14 @@
     <div class="container">
     <form method ="POST">
         <div class="row">
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top:-100px;">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top:-200px;">
             <div class="card card-signin my-5" style="border-color:#828282;">
             <div class="card-body">
             <!-- NOME -->
                 <h5 class="card-title text-center"style="color:#828282;">Cadastre-se no LibrasCraft!</h5>
                 <form class="form-signin">
                 <div class="form-label-group" style="color:#828282;">
+
                 <label for="inputNome">Nome:</label>
                     <input type="text" id="nome" class="form-control " name = "nome" placeholder="Nome" required autofocus>
                 <br />
@@ -121,7 +102,6 @@
                     <input type="date" id="data" class="form-control " name = "data_nascimento" placeholder="Data de Nascimento" required autofocus>
                     <br />
                 </div>
-
             <!-- SEXO -->
                 <div class="form-label-group" style="color:#828282;">
                     <label for="inputData">Sexo:</label>
@@ -150,7 +130,7 @@
                 
                 
             <!-- BOTAO CADASTRAR -->
-                <button class=" btn_cadastra btn btn-lg btn-primary btn-block text-uppercase "  type="submit" id="btn_cadastra" style="border-color:#828282;background-color:#828282;">Cadastrar</button>
+                <button class=" btn_cadastra btn btn-lg btn-primary btn-block text-uppercase "  type="button" id="btn_cadastra" style="border-color:#828282;background-color:#828282;">Cadastrar</button>
             </form>
                 <div id = "status"></div>
 

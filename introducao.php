@@ -1,32 +1,44 @@
 <?php
 include("conexao.php");
 include("menu.php");
-$pagina = $_GET["pagina"];
+$pagina = $_GET["pagina"]; // ???????????
 
-$consulta = "SELECT palavra FROM palavra WHERE cod_subfase = $pagina";
+$consulta = "SELECT palavra, video_sinal FROM palavra WHERE cod_subfase = $pagina";
 $resultado = mysqli_query($conexao,$consulta) or die("Erro na consulta");
-$vetor = "palavras = new Array(";
+$vetor_palavra = "palavras = new Array("; // ??????????????????????????????????
+$vetor_video = "videos = new Array("; // ??????????????????????????????????
 $count = 0;
 while($linha= mysqli_fetch_assoc($resultado)) // todas as palavras selecionadas na consulta
 {
-    if($count!=0)
+    if($count!=0) 
     {
-        $vetor.=",";      
+        $vetor_palavra.=",";      
+        $vetor_video.=",";      
 	}
-	else		
+	else // pega o primeiro video/palavra	
 	{
 		$palavra=$linha["palavra"];
-		$img_palavra=strtolower(str_replace(" ", "_",$linha["palavra"])).".png"; // transforma tudo em minusculo
-	}							// str_replace substitui espaco por _ (só nesse caso)
+		$video=$linha["video_sinal"];
+		$img_palavra=strtolower(str_replace(" ", "_",$linha["palavra"])).".png"; // transforma tudo em minusculo // str_replace substitui espaco por _ (só nesse caso)
+		$video_sinal= "https://www.youtube.com/embed/".$video;
+	}							
     $count++;
-    $vetor.="'".$linha["palavra"]."'";
+    $vetor_palavra.="'".$linha["palavra"]."'";
+    $vetor_video.="'".$linha["video_sinal"]."'";
 } 
-$vetor.=");";
+$vetor_palavra.=");
+";
+$vetor_video.=");
+";
+
+$consulta2 = "SELECT nome FROM subfase WHERE id_subfase = $pagina";
+$resultado2 = mysqli_query($conexao,$consulta2) or die("Erro na consulta2");
+$linha = mysqli_fetch_assoc($resultado2);
 ?>
 <style>
 	body 
 	{
-		background: url("img/casa/comodo/sala.png") no-repeat center top fixed;
+		background: url("img/casa/comodo/<?php echo $linha["nome"];?>.png") no-repeat center top fixed;
 		width:100%; 
         overflow: hidden;
 	}
@@ -34,7 +46,8 @@ $vetor.=");";
 <script>
     posicao = 0;
     <?php
-        echo $vetor;
+        echo $vetor_palavra;
+        echo $vetor_video;
     ?>
      function troca_palavra(acao) // PROXIMA LETRA
         {
@@ -56,6 +69,7 @@ $vetor.=");";
                 $("#proximo").hide();// ESCONDE BOTAO PROXIMO
             }
 			palavra=palavras[posicao];
+			video=videos[posicao];
 		
 			$("#texto_palavra").html(""); // limpa tabela 
 			tr="<tr>"; // troca a letra da tabela
@@ -83,9 +97,12 @@ $vetor.=");";
 			palavra= palavra.toLowerCase(); // transforma palavra em minuscula
 			palavra= palavra.normalize("NFD").replace(/[\u0300-\u036f]/g, ''); // transforma caracteres especiais de acentuação, tirando os acentos 	
 			palavra= palavra.replace(" ","_"); // troca espaco por _
+			
 			link_img="img/objetos/"+palavra+".png";
+			link_video="https://www.youtube.com/embed/"+video;
 			console.log(link_img);
             $("#img_palavra").attr("src",link_img);
+            $("#link_video").attr("src",link_video);
 		}
 		$(document).ready(function(){
 			$("#proximo").click(function(){
@@ -103,7 +120,7 @@ $vetor.=");";
 <body>
 
 	<div class="container mt-5 align-middle" >
-		<div class="row justify-content-center "style="margin-top:-100px;">
+		<div class="row justify-content-center "style="margin-top:-150px;">
 			<div class="row">
 				<div class="col d-flex flex-column justify-content-center align-items-center">
 					<div class="col-12 border bg-white">
@@ -136,11 +153,11 @@ $vetor.=");";
 							<!-- IMAGEM DO OBJETO -->
 							<div class="row mt-4 mx-md-n5">
 								<div class="col py-3 px-md-3 border bg-light d-flex flex-column justify-content-center align-items-center">
-									<img src="img/objetos/<?php echo $img_palavra;?>" class="rounded float-left" id="img_palavra" style="width:70%; margin-top:-70px;">
+									<img src="img/objetos/<?php echo $img_palavra;?>" class="rounded float-left" id="img_palavra" style="width:70%; margin-top:-30px;">
 								</div>
 								<!-- VIDEO EM LIBRAS -->
-								<div class="col py-3 px-md-3 border bg-light">
-									<iframe width="360" height="200" src="https://www.youtube.com/embed/Xxiry0x6jxE" class="rounded float-right" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-left:20px;"></iframe>
+								<div class="col py-3 px-md-3 border bg-light"  style="margin-left:-10px;">
+									<div class="video"  style="margin-left:10px;"><iframe id="link_video" width="360" height="200" src="<?php echo $video_sinal; ?>" class="rounded float-right" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 								</div>
 									
 							</div>

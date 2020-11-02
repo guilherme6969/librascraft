@@ -25,3 +25,7 @@ body{
     background-image: url(logolc.png);
     background-repeat: repeat-y;
 }
+#btn-modal-finalizar
+{
+    display:none;
+}

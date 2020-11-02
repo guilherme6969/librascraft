@@ -25,7 +25,6 @@
             else
             {
                 $("#anterior").hide();// ESCONDE BOTAO ANTERIOR
-                $("#btn-modalfinalizar").hide();// ESCONDE BOTAO FINALIZAR
             }
             if(posicao!=26) 
             {
