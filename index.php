@@ -1,11 +1,23 @@
 <?php
+
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+ 
+if( $detect->isMobile()){
+    $initial_scale="0.65";
+}
+else{
+    $initial_scale="1";    
+} 
+
+
 session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, inicial-scale-to-fit-no">
+        <meta name="viewport" content="width=device-width, inicial-scale=<?php echo $initial_scale;?>">
         <title>Librascraft</title>
         <link href="css/bootstrap.min.css" rel="stylesssheet"/>
         
