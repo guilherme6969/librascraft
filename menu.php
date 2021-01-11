@@ -11,13 +11,19 @@ else{
 } 
 
 session_start();
+
+
+
+$consulta = "SELECT nome FROM usuario";
+$resultado2 = mysqli_query($conexao,$consulta) or die("Erro na consulta");
+$linha = mysqli_fetch_assoc($resultado);
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
 	<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=<?php echo $initial_scale;?>">
         <title>Librascraft</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="estilo.css">      
@@ -41,7 +47,7 @@ session_start();
     <div class="container">
         <div class="row">
             <div class="ajuda"><!-- ICONE AJUDA -->
-            <a href="ajuda.php" style="width:5%; margin-top:-85px; margin-left:1130px;"></a>
+            <p style="width:5%; margin-top:-85px; margin-left:1130px;">Bem-Vindo <?php echo $linha["nome"]?></a>
             </div>
         </div>
 
