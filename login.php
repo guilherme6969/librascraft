@@ -24,9 +24,46 @@ include("conexao.php");
         })
        });
 
+
+$(document).on("click",".logar",function(
+  ){
+ 
+      $.ajax
+      ({
+          url:"validacao.php",
+          type:"post",
+          data:
+          {
+             
+              email:$("input[name='email']").val(),
+              senha:$("input[name='senha']").val()
+              },
+          
+          success:function(data)
+          {
+              if(data==1)
+              {
+                header("location: index.php");
+              }
+              else
+              {
+                  $("#status").html("ERRO AO CADASTRAR")
+                  $("#status").css("color","red");
+                  $("#status").css("text-align","center");
+              }
+          },
+          error:function(e)
+          {
+              $("#status").html("ERRO: Sistema indisponivel!");
+              $("#status").css("color","red");
+          }
+      });
+  });    
+
+
     </script>
     <body>
-        <form method ="POST" action="validacao.php" id="form_login">
+       
         <div class="container">
             <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top:-80px;">

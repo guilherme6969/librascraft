@@ -21,7 +21,7 @@ if(isset($_GET["pagina"])){
 }
 
 $select.= " INNER JOIN palavra ON palavra.cod_subfase=subfase.id_subfase 
-          GROUP BY fase.nome, subfase.nome ORDER BY fase.nome, subfase.nome";
+          GROUP BY fase.id_fase, subfase.id_subfase ORDER BY fase.nome, subfase.nome";
  
 $resultado = mysqli_query($conexao,$select)
 or die(mysqli_error($conexao));
@@ -42,7 +42,7 @@ $select.= " INNER JOIN palavra ON palavra.cod_subfase=subfase.id_subfase
           INNER JOIN resposta ON 
                     resposta.cod_palavra=palavra.id_palavra AND 
                     cod_usuario='".$_SESSION["autorizado"]."'
-          GROUP BY fase.nome, subfase.nome ORDER BY fase.nome, subfase.nome";
+          GROUP BY fase.id_fase, subfase.id_subfase ORDER BY fase.nome, subfase.nome";
  
 $resultado = mysqli_query($conexao,$select)
 or die(mysqli_error($conexao));

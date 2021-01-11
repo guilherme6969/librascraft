@@ -61,7 +61,7 @@
 
 
 <!-- BOTAO ALFABETO -->
-    <div class="container">
+    <div class="container"> 
         <div class="row">
             <div class="alfabeto"> 
                 <img src="img/icones/submapa_abc/botao_abc.png" class="btn border-bottom-0 border-dark" style="width:200px; heigt:200px; background-color:#FFFFF0; margin-left:-200px; margin-top:50px;" id="btn-mensagem-alfabeto" data-toggle="modal" data-target="#modal-mensagem">
