@@ -22,7 +22,8 @@
 		} 
 		else
 			{
-				die("Email ou senha incorretos!");
+				
 				header("location: login.php?erro=1");
+				die("Email ou senha incorretos!");
 			} 
 ?>
