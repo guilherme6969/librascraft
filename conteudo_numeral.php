@@ -86,7 +86,7 @@
                         <button class="btn btn-lg btn-google btn-block w-50 text-uppercase" id="proximo" style="border-color:#828282;background-color:#828282;color:white; margin-left:200px; margin-top:-47px;">Próximo</button>
                         <button class="btn btn-lg btn-google btn-block w-50 text-uppercase" id="anterior" style="border-color:#828282;background-color:#828282;color:white; margin-left:-200px;margin-top:-47px;display:none;">Anterior</button>
 
-                        <button class="btn btn-lg btn-google btn-block w-50 text-uppercase" id="btn-modal-finalizar" style="border-color:darkgreen;background-color:green;color:white; margin-left:250px; margin-top:-47px;" data-toggle="modal" data-target="#modal-mensagem">FINALIZAR</button> <!-- BOTAO MODAL FINALIZAR -->
+                        <button class="btn btn-lg btn-google btn-block w-50 text-uppercase" id="btn-modal-finalizar" style="border-color:darkgreen;background-color:green;color:white; margin-left:250px; margin-top:-47px; display:none;" data-toggle="modal" data-target="#modal-mensagem">FINALIZAR</button> <!-- BOTAO MODAL FINALIZAR -->
                     
                     
                     </div>    
