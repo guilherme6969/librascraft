@@ -13,7 +13,7 @@
     </style>
     <script>
         posicao=0;
-        letras=new Array("A","B","C","Ç","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+        letras=new Array("a","b","c","ç","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
         function troca_letra(acao) // PROXIMA LETRA
         {
             posicao= posicao + acao;
@@ -36,9 +36,9 @@
                 $("#proximo").hide();// ESCONDE BOTAO PROXIMO
                 $("#btn-modal-finalizar").show(); // MOSTRA BOTAO FINALIZAR
             }
-            letra=letras[posicao];
+            letra.toUpperCase()=letras[posicao];
             $("#texto_letra").html(letra.toUpperCase());
-            link_img="img/alfabeto/"+letra+".gif";
+            link_img="img/alfabeto/"+letra.toUpperCase()+".gif";
             $("#img_letra").attr("src",link_img);
         }
         $(document).ready(function(
