@@ -192,7 +192,7 @@ else{
                <br />
                '.$msg_status.'   
                <br />         
-               <h4>Clique aqui para verificar suas respostas</h4>
+               <h4 style="cursor:pointer;">Clique aqui para verificar suas respostas</h4>
             </td>
         </tr>
         <script>
