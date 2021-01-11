@@ -1,7 +1,25 @@
 <?php
 
 	include("conexao.php");
-	
+	?>
+	<script>
+
+	// PAI DE TODOS -----------------------------------------------------------------------------------
+	$(function(
+	){
+
+		
+		$(document).ready(function(
+		){             
+			
+			// MODAL (mesma coisa) ---------------------------------------------------------------------------------
+			
+			$("#modal-mensagem-erro").modal('show');
+			
+		});    
+	});
+	</script>
+<?php
 	$email = $_POST["email"];
 	$senha = $_POST["senha"];
 
@@ -24,6 +42,17 @@
 			{
 				
 				header("location: login.php?erro=1");
-				alert("Senha ou Usuario Incorretos!");
+				die("<div class='modal fade' id='modal-mensagem-erro'> 
+				<div class='modal-dialog'>
+					 <div class='modal-content'>
+						 <div class='card-body'>
+							<h4 class='card-title text-center'style='color:#828282;'>Senha ou Email incorretos</h4>
+							
+						 <div class='modal-footer'>
+							 <button type='button' class='btn btn-default' data-dismiss='modal'>Fechar</button>
+					   </div>
+					 </div>
+				 </div>
+			 </div>");
 			} 
 ?>
