@@ -15,7 +15,7 @@ session_start();
 
 
 $consulta = "SELECT nome FROM usuario";
-$resultado2 = mysqli_query($conexao,$consulta) or die("Erro na consulta");
+$resultado = mysqli_query($conexao,$consulta) or die("Erro na consulta");
 $linha = mysqli_fetch_assoc($resultado);
 ?>
 
@@ -46,30 +46,32 @@ $linha = mysqli_fetch_assoc($resultado);
 
     <div class="container">
         <div class="row">
-            <div class="ajuda"><!-- ICONE AJUDA -->
-            <p style="width:5%; margin-top:-85px; margin-left:1130px;">Olá <?php echo $linha["nome"]!?></p>
+            <div class="ajuda" style=" margin-top:-40px; margin-left:900px;"><!-- ICONE AJUDA -->
+            <b><h7 style="color:white;">Bem-Vindo(a) <?php echo $linha["nome"]?></h7><b>
             </div>
         </div>
 
          <div class="row">
             <div class="voltar"><!-- ICONE SAIR -->
-            <p style="width:5%; margin-top:-85px; margin-left:1130px;">Olá <?php echo $linha["nome"]!?></p>
-            <a href="logout.php"><img src="img/icones/menu/icone_sair.png" style="width:3%; margin-top:-135px; margin-left:1150px;"></a>
+            
+            <a href="logout.php"><img src="img/icones/menu/logout.png" style="width:2%; margin-top:-90px; margin-left:1150px;"></a>
+            
             </div>
         </div>
         <div class="row">
             <div class="logo"><!-- ICONE LIBRASCRAFT -->
-            <a href="index.php"><img src="img/icones/menu/librascraft.png" style="width:27%; margin-top:-183px; margin-left:410px;"></a>
+            <a href="index.php"><img src="img/icones/menu/librascraft.png" style="width:27%; margin-top:-133px; margin-left:410px;"></a>
             </div>
         </div>
         <div class="row">
             <div class="voltar"><!-- ICONE VOLTAR -->
-            <a href="mapa.php"><img src="img/icones/menu/voltar.png" style="width:3%; margin-top:-230px; margin-left:-50px;"></a>
+            <a href="mapa.php"><img src="img/icones/menu/voltar.png" style="width:3%; margin-top:-180px; margin-left:-50px;"></a>
+           
             </div>
         </div>
         <div class="row">
             <div class="voltar"><!-- ICONE SCORE -->
-            <a href="score.php"><img src="img/icones/menu/score.png" style="width:9%; margin-top:-275px; margin-left:125px;"></a>
+            <a href="score.php"><img src="img/icones/menu/score.png" style="width:9%; margin-top:-235px; margin-left:125px;"></a>
             </div>
         </div>
     </div>
