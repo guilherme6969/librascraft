@@ -46,7 +46,7 @@ $linha = mysqli_fetch_assoc($resultado);
 
     <div class="container">
         <div class="row">
-            <div class="ajuda" style=" margin-top:-40px; margin-left:900px;"><!-- ICONE AJUDA -->
+            <div class="ajuda" style=" margin-top:-40px; margin-left:850px;"><!-- ICONE AJUDA -->
             <b><h7 style="color:white;">Bem-Vindo(a) <?php echo $linha["nome"]?></h7><b>
             </div>
         </div>
