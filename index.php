@@ -104,21 +104,6 @@ session_start();
         font-size:27px;
         margin-left:630px;
     }
-    .modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: rgba(0,0,0,0.8);
-  z-index: 99999;
-  opacity:0;
-  -webkit-transition: opacity 400ms ease-in;
-  -moz-transition: opacity 400ms ease-in;
-  transition: opacity 400ms ease-in;
-  pointer-events: none;
-}
         </style>
     </head>
     <body>
@@ -158,12 +143,6 @@ session_start();
             </div>';
         }
     ?>
-
-    <a href="#AbrirModal">Open Modal</a>
-    <div id="#AbrirModal" class ="modal">
-    <a href="#fechar" title="Fechar" class="fechar">x</a>
-    <h2>Janela Modal</h2>
     </div>
-    
     </body>
 </html>
