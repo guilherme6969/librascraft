@@ -98,6 +98,8 @@ $linha = mysqli_fetch_assoc($resultado2);
 			palavra= palavra.toLowerCase(); // transforma palavra em minuscula
 			palavra= palavra.normalize("NFD").replace(/[\u0300-\u036f]/g, ''); // transforma caracteres especiais de acentuação, tirando os acentos 	
 			palavra= palavra.replace(" ","_"); // troca espaco por _
+			palavra= palavra.replace(" ","_"); // troca espaco por _
+			palavra= palavra.replace(" ","_"); // troca espaco por _
 			
 			link_img="img/objetos/"+palavra+".png";
 			link_video="https://www.youtube.com/embed/"+video;
