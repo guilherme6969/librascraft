@@ -1,7 +1,25 @@
 <?php
 
 	include("conexao.php");
+	?>
+	<script>
 
+	// PAI DE TODOS -----------------------------------------------------------------------------------
+	$(function(
+	){
+
+		
+		$(document).ready(function(
+		){             
+			
+			// MODAL (mesma coisa) ---------------------------------------------------------------------------------
+			$("#btn-mensagem-erro").click(function(){
+			$("#modal-mensagem-erro").modal();
+			});
+		});    
+	});
+	</script>
+<?php
 	$email = $_POST["email"];
 	$senha = $_POST["senha"];
 
