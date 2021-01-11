@@ -30,7 +30,7 @@ session_start();
     <div class="container">
         <div class="row">
             <div class="ajuda"><!-- ICONE AJUDA -->
-            <a href="ajuda.php"><img src="img/icones/menu/ajuda.png" style="width:5%; margin-top:-85px; margin-left:1130px;"></a>
+            <a href="ajuda.php"></a>
             </div>
         </div>
 
@@ -41,7 +41,7 @@ session_start();
         </div>
         <div class="row">
             <div class="logo"><!-- ICONE LIBRASCRAFT -->
-            <a href="index.php"><img src="img/icones/librascraft.png" style="width:27%; margin-top:-183px; margin-left:410px;"></a>
+            <a href="index.php"><img src="img/icones/menu/librascraft.png" style="width:27%; margin-top:-183px; margin-left:410px;"></a>
             </div>
         </div>
         <div class="row">
