@@ -143,6 +143,12 @@ session_start();
             </div>';
         }
     ?>
+
+    <a href="#AbrirModal">Open Modal</a>
+    <div id="#AbrirModal" class ="modal">
+    <a href="#fechar" title="Fechar" class="fechar">x</a>
+    <h2>Janela Modal</h2>
     </div>
+    
     </body>
 </html>

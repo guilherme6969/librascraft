@@ -42,8 +42,8 @@
 			{
 				
 				
-				header("location: login.php?erro=1" 
-				"<div class='modal fade' id='modal-mensagem-erro'> 
+				header("location: login.php?erro=1");
+				die("<div class='modal fade' id='modal-mensagem-erro'> 
 				<div class='modal-dialog'>
 					 <div class='modal-content'>
 						 <div class='card-body'>
