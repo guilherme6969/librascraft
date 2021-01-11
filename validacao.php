@@ -41,7 +41,7 @@
 		else
 			{
 				
-				header("location: login.php?erro=1");
+				
 				die("<div class='modal fade' id='modal-mensagem-erro'> 
 				<div class='modal-dialog'>
 					 <div class='modal-content'>
@@ -54,5 +54,6 @@
 					 </div>
 				 </div>
 			 </div>");
+			 header("location: login.php?erro=1");
 			} 
 ?>
