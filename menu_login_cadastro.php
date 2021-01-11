@@ -30,7 +30,7 @@ session_start();
     <div class="container">
         <div class="row">
             <div class="ajuda"><!-- ICONE AJUDA -->
-            <a href="ajuda.php"></a>
+            <a href="ajuda.php"style="width:5%; margin-top:-85px; margin-left:1130px;"></a>
             </div>
         </div>
 
