@@ -1,7 +1,13 @@
 <?php
 
 	include("conexao.php");
+	include("menu_validacao.php");
 
+
+?>
+
+<body>
+<?php
 	$email = $_POST["email"];
 	$senha = $_POST["senha"];
 
@@ -22,7 +28,16 @@
 		} 
 		else
 			{
-				die("Email ou senha incorretos!");
-				header("location: login.php?erro=1");
-			} 
+				die(" <div class='container'>
+				<div class='row'>
+					<div class='col-sm-9 col-md-7 col-lg-9 mx-auto' style='margin-top:-100px;'>
+						<div class='card card-signin my-5' style='border-color:#828282;'>
+							<div class='card-body'>
+							<h3 style='text-align:center; color:grey;'>Senha ou Email incorretos</h3>
+							<h5 style='text-align:center; color:grey;'>Por favor, verifique se seus dados estão corretos</h5>
+								<a href='login.php' class='btn btn-lg btn-google btn-block w-50 text-uppercase' id='proximo' style='border-color:#828282;background-color:#828282;color:white; margin-left:200px; margin-top:47px;'>Voltar para o Login</button>
+							
+							
+						
+			");} 
 ?>
