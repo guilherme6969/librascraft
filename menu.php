@@ -47,12 +47,13 @@ $linha = mysqli_fetch_assoc($resultado);
     <div class="container">
         <div class="row">
             <div class="ajuda"><!-- ICONE AJUDA -->
-            <p style="width:5%; margin-top:-85px; margin-left:1130px;">Bem-Vindo <?php echo $linha["nome"]?></a>
+            <p style="width:5%; margin-top:-85px; margin-left:1130px;">Olá <?php echo $linha["nome"]!?></p>
             </div>
         </div>
 
          <div class="row">
             <div class="voltar"><!-- ICONE SAIR -->
+            <p style="width:5%; margin-top:-85px; margin-left:1130px;">Olá <?php echo $linha["nome"]!?></p>
             <a href="logout.php"><img src="img/icones/menu/icone_sair.png" style="width:3%; margin-top:-135px; margin-left:1150px;"></a>
             </div>
         </div>
