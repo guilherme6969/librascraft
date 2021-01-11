@@ -79,7 +79,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title text-center" id="texto_letra" style="color:#828282;font-size:370px; margin-left:-400px; margin-top:-130px;">A</h1> <!-- LETRA -->
-                            <img id="img_letra" src="img/alfabeto/a.gif" style="width:35%; margin-left:400px; margin-top:-440px;"> <!--IMAGEM DA LETRA -->
+                            <img id="img_letra" src="img/alfabeto/A.gif" style="width:35%; margin-left:400px; margin-top:-440px;"> <!--IMAGEM DA LETRA -->
                         </div>
                         <div class="card-body" style="margin-left:230px">
                         <button class="btn btn-lg btn-google btn-block w-50 text-uppercase" id="proximo" style="border-color:#828282;background-color:#828282;color:white; margin-left:200px; margin-top:-47px;">Próximo</button>
