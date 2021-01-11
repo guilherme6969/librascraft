@@ -36,7 +36,11 @@
                     {
                         nome: $("input[name='nome']").val(),
                         email:$("input[name='email']").val(),
+<<<<<<< HEAD
                         senha:senha_md5,
+=======
+                        senha:$.md5($("input[name='senha']").val()),
+>>>>>>> 4cbfa4a650757e532c31fdb1acebc886dfc07787
                         sexo:$("input[name='sexo']:checked").val(),
                         data_n:$("input[name='data_nascimento']").val(),
                         condicao:$("input[name='condicao_auditiva']:checked").val()
