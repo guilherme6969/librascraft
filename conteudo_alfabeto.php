@@ -13,7 +13,7 @@
     </style>
     <script>
         posicao=0;
-        letras=new Array("a","b","c","ç","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
+        letras=new Array("A","B","C","Ç","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
         function troca_letra(acao) // PROXIMA LETRA
         {
             posicao= posicao + acao;
