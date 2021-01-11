@@ -36,7 +36,7 @@
                 $("#proximo").hide();// ESCONDE BOTAO PROXIMO
                 $("#btn-modal-finalizar").show(); // MOSTRA BOTAO FINALIZAR
             }
-            letra.toUpperCase()=letras[posicao];
+            letra=letras[posicao];
             $("#texto_letra").html(letra.toUpperCase());
             link_img="img/alfabeto/"+letra.toUpperCase()+".gif";
             $("#img_letra").attr("src",link_img);
