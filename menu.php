@@ -1,4 +1,15 @@
+
 <?php
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+ 
+if( $detect->isMobile()){
+    $initial_scale="0.65";
+}
+else{
+    $initial_scale="1";    
+} 
+
 session_start();
 ?>
 
