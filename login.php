@@ -15,23 +15,15 @@ include("conexao.php");
     }
     </style>
     <script>
-<<<<<<< HEAD
        $(document).ready(function(){
-=======
-	$(function(){
->>>>>>> 4cbfa4a650757e532c31fdb1acebc886dfc07787
         $("#logar").click(function(){ // para criptografar a senha
             senha_md5=$.md5($("#senha").val());//pega a senha e codifica para a variavel md5
             $("#senha").val(senha_md5); // muda o valor da senha para md5(32 caracteres)
             console.log(senha_md5);
             $("#form_login").submit(); 
         })
-<<<<<<< HEAD
        });
 
-=======
-    });
->>>>>>> 4cbfa4a650757e532c31fdb1acebc886dfc07787
     </script>
     <body>
         <form method ="POST" action="validacao.php" id="form_login">
