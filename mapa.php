@@ -7,11 +7,18 @@
 	<style>
 	body 
   {
-    background: url("img/mapa1.png") no-repeat;
+    background: url("img/fundo/mapa.png") no-repeat;
     width:100%; 
     overflow: hidden;
   }
-
+  @media (min-width: 1920px)
+  
+  {
+    body
+    {
+      background: url("img/mapa1920.png") no-repeat; /* do maior p o menor */
+    }
+  }
 	</style>
 </head>
 <body>

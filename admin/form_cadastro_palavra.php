@@ -1,4 +1,3 @@
-
 <?php
     include("menu.php");
     include("conexao.php");
@@ -12,7 +11,7 @@
 <style>
     body
     {
-        background:url("img/login_cadastro2.png")  no-repeat;
+        background:url("img/login_cadastro1.png")  no-repeat;
         width:100%; 
         overflow: hidden;
 
@@ -49,17 +48,15 @@
                     
                     success:function(data)
                     {
-                        console.log(data);
                         if(data==1)
                         {
-                            alert("Palavra cadastrada com sucesso!");
+                            $("#status").html("PALAVRA CADASTRADO COM SUCESSO!")
                             $("#status").css("color","green");
                             $("#status").css("text-align","center");
                         }
                         else
                         {
-                         
-                            alert("Palavra já cadastrada!");
+                            $("#status").html("ERRO AO CADASTRAR")
                             $("#status").css("color","red");
                             $("#status").css("text-align","center");
                         }

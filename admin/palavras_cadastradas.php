@@ -34,15 +34,15 @@ $(function(){
         $.ajax({
             url:"carrega_palavra_alterar.php",
             type:"post",
-            data:{id: id},
+            data:{id: id}, 
             success: function(vetor)
             {
                 $("input[name='cod_fase']").val(vetor.nivel);
                 $("input[name='cod_subfase']").val(vetor.subnivel);
                 $("input[name='cod_palavra']").val(vetor.palavra);
-                $("input[name='figura']").val(vetor.figura);
+               
                 $("input[name='video_s']").val(vetor.video_s);
-                $("input[name='video_d']").val(vetor.video_d);
+              
                 $(".btn_altera").attr("class","alteracao"); // muda o nome do botao para Alterar
                 $(".alteracao").val("Alterar Cadastro");
             }
@@ -68,9 +68,9 @@ $(function(){
                     linha += "<td class = 'cod_fase'>" + matriz[i].cod_fase + "</td>";
                     linha += "<td class = 'cod_subfase'>" + matriz[i].cod_subfase + "</td>";
                     linha += "<td class = 'cod_palavra'>" + matriz[i].cod_palavra + "</td>";
-                    linha += "<td class = 'figura'>" + matriz[i].figura + "</td>";
+                   
                     linha += "<td class = 'video_s'>" + matriz[i].video_s + "</td>";
-                    linha += "<td class = 'video_d'>" + matriz[i].video_d + "</td>";
+                   
                     linha += "<td><button type = 'button'  class = 'alterar btn btn-secondary' id='alterar' value='"+ matriz[i].id_palavra + "'>Alterar</button> <button type = 'button' class = 'remover btn btn-secondary' value ='" + matriz[i].id_palavra + "'>Remover</button> </td>";
                     linha += "</tr>";
                     $("#tb").append(linha); 
@@ -101,7 +101,7 @@ $(document).on("click",".alteracao",function(){
                 subnivel: $("input[name='subnivel']").val(),
                 palavra: $("input[name='palavra']").val(),
                 video_s: $("input[name='video_s']").val(),
-                video_d: $("input[name='video_d']").val(),
+               
             },
             success:function(data)
             {
@@ -114,7 +114,7 @@ $(document).on("click",".alteracao",function(){
                     $("input[name='subnivel']").val("");
                     $("input[name='palavra']").val("");
                     $("input[name='video_s']").val("");
-                    $("input[name='video_d']").val("");
+                  
 
                     $(".alteracao").attr("class","btn_altera"); // muda o nome devolta para ALTERACAO
                     $(".btn_altera").val("Alteração");  
@@ -263,15 +263,9 @@ $(document).on("click",".alteracao",function(){
                 <br />
                 <!--PALAVRA-->
                 <input  type = "text" class="form-control w-50" id ="palavra" name ="cod_palavra" placeholder="Palavra"  style="margin-left:-10px">
-                <!--IMAGEM -->
-                <input  type = "file" class="form-control w-50" id ="figura" name ="figura" placeholder="Figura"  style="margin-left:400px; margin-top:-39px;">
-                <label for="inputEmail" style="margin-left:400px;">Imagem:</label>
-                <!--VIDEO SINAL EM LIBRAS -->
-                <input  type = "file" class="form-control w-50" id ="video_sinal" name ="video_s" placeholder="Video Sinal"  style="margin-top:3px;">
-                <label for="inputEmail">Video Sinal em Libras:</label>
-                <!--VIDEO SINAL DATILOLOGIA-->
-                <input  type = "file" class="form-control w-50" id ="video_datilologia" name ="video_d" placeholder="Video Datilologia"  style="margin-left:400px; margin-top:-75px;">
-                <label for="inputEmail" style="margin-left:400px;">Video Datilologia em Libras:</label>
+                <!--LINK VIDEO -->
+                <input  type = "text" class="form-control w-50" id ="video_sinal" name ="video_sinal" placeholder="Link do video"  style="margin-left:400px; margin-top:-39px;">
+              
                 <br />
             <!-- BOTAO ALTERACAO -->
             <button class=" btn_atera btn btn-lg btn-secondary btn-block text-uppercase "  type="submit" id="btn_altera" style="border-color:#828282;background-color:#828282;">Alteração</button>

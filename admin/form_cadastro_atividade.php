@@ -11,7 +11,7 @@
 <style>
     body
     {
-        background:url("img/login_cadastro2.png")  no-repeat;
+        background:url("img/login_cadastro1.png")  no-repeat;
         width:100%; 
         overflow: hidden;
 
@@ -40,7 +40,6 @@
                     data:
                     {
                         subnivel:$("select[name='cod_subfase']").val(),
-                        enunciado:$("input[name='enunciado']").val(),
                         alternativa_a:$("input[name='alternativa_a']").val(),
                         alternativa_b:$("input[name='alternativa_b']").val(),
                         alternativa_c:$("input[name='alternativa_c']").val(),
@@ -59,7 +58,7 @@
                         else
                         {
                          
-                            alert("ERRO(precisa definir alguma variavel como unique para nao ter outra igual)!");
+                            alert("ERRO!");
                             $("#status").css("color","red");
                             $("#status").css("text-align","center");
                         }
@@ -126,7 +125,7 @@
             <h6 style = "color:#828282; text-align:center;"> CADASTRO ATIVIDADE PARA OUVINTES</h6>
             </br >
                <!-- NIVEL -->
-               <select class="custom-select w-50" id ="fase" name ="cod_fase">
+               <select class="custom-select col-5" id ="fase" name ="cod_fase">
                 <option selected>Fase</option>
                 <?php
 
@@ -139,39 +138,28 @@
                 </select>
               
             <!--SUBNIVEL -->
-            <select class="custom-select w-50" id ="subfase2" name ="cod_subfase" style="margin-left:210px; margin-top:-67px;">
+            <select class="custom-select col-5" id ="subfase" name ="cod_subfase" >
                 <option selected>Subfase</option>
                
-                </select>
+            </select>
                
 
-            <!-- ENUNCIADO -->
-                <div class="form-label-group" style="color:#828282;">
-                    <textarea id="enunciado" class="form-control" name = "enunciado" placeholder="Enunciado da atividade" ></textarea>
-                    <label for="inputEmail"></label>
-                </div>
-            <!-- ATERNATIVA A -->
-            <div class="form-label-group" style="color:#828282;">
             
-                        <input type="text" id="aternativa_a" class="form-control w-50" name = "alternativa_a" placeholder="Alternativa A:">
-                </div>
-                </br >
-
-           <!-- ATERNATIVA B -->
-           <div class="form-label-group" style="color:#828282;">
-                        <input type="text" id="aternativa_b" class="form-control w-50" name = "alternativa_b" placeholder="Alternativa B:"  style="margin-left:210px; margin-top:-62px;">
+            <!-- ATERNATIVA A -->
+            <div class="form-group" style="color:#828282;">
+            
+                <input type="text" id="aternativa_a" class="form-control col-10" name = "alternativa_a" placeholder="Alternativa A:">
+               
+           
+                        <input type="text" id="aternativa_b" class="form-control col-10" name = "alternativa_b" placeholder="Alternativa B:">
                 </div>
                 </br >
 
            <!-- ATERNATIVA C -->
            <div class="form-label-group" style="color:#828282;">
-                        <input type="text" id="aternativa_c" class="form-control w-50" name = "alternativa_c" placeholder="Alternativa C:">
-                </div>
-                </br >
-
-            <!-- ATERNATIVA D -->
-             <div class="form-label-group" style="color:#828282;">
-                        <input type="text" id="aternativa_d" class="form-control w-50" name = "alternativa_d" placeholder="Alternativa D:" style="margin-left:210px; margin-top:-62px;" >
+                        <input type="text" id="aternativa_c" class="form-control col-10" name = "alternativa_c" placeholder="Alternativa C:">
+               
+                        <input type="text" id="aternativa_d" class="form-control col-10" name = "alternativa_d" placeholder="Alternativa D:" >
                 </div> 
                 </br >
 

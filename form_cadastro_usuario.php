@@ -1,12 +1,12 @@
 
 <?php
-    include("menu.php");
+    include("menu_login_cadastro.php");
     include("conexao.php");
 ?> 
 <style>
     body
     {
-        background:url("img/login_cadastro1.png")  no-repeat;
+        background:url("img/fundo/login_cadastro.png")  no-repeat;
         width:100%; 
         overflow: hidden;
 
@@ -27,7 +27,7 @@
             // CADASTRAR ---------------------------------------------------------------------------------
             $(document).on("click",".btn_cadastra",function(
             ){
-            
+            senha_md5=$.md5($("input[name='senha']").val());
                 $.ajax
                 ({
                     url:"insere.php",
@@ -36,7 +36,7 @@
                     {
                         nome: $("input[name='nome']").val(),
                         email:$("input[name='email']").val(),
-                        senha:$.MD5($("input[name='senha']").val()),
+                        senha:senha_md5,
                         sexo:$("input[name='sexo']:checked").val(),
                         data_n:$("input[name='data_nascimento']").val(),
                         condicao:$("input[name='condicao_auditiva']:checked").val()
@@ -91,7 +91,7 @@
                    <br />
                 </div>
             <!-- SENHA -->
-                <div class="form-label-group" style="color:#828282;" action="validacao_email.php">
+                <div class="form-label-group" style="color:#828282;">
                 <label for="inputSenha">Senha</label>
                     <input type="password" id="senha" class="form-control " name = "senha" placeholder="Senha" required autofocus>
                    <br />

@@ -1,6 +1,6 @@
 <?php
 
-include("menu.php");
+include("menu_login_cadastro.php");
 include("conexao.php");
 
 ?>
@@ -8,19 +8,22 @@ include("conexao.php");
     <style>
     body
     {
-        background:url("img/login_cadastro1.png")  no-repeat;
+        background:url("img/fundo/login_cadastro.png")  no-repeat;
         width:100%; 
         overflow: hidden;
 
     }
     </style>
     <script>
+       $(document).ready(function(){
         $("#logar").click(function(){ // para criptografar a senha
-            senha_md5=$.MD5($("#senha").val());//pega a senha e codifica para a variavel md5
+            senha_md5=$.md5($("#senha").val());//pega a senha e codifica para a variavel md5
             $("#senha").val(senha_md5); // muda o valor da senha para md5(32 caracteres)
             console.log(senha_md5);
             $("#form_login").submit(); 
         })
+       });
+
     </script>
     <body>
         <form method ="POST" action="validacao.php" id="form_login">

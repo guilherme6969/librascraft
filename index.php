@@ -15,7 +15,7 @@ session_start();
         <style>
     html 
     {
-        background: url("img/index1.png") no-repeat ;
+        background: url("img/fundo/index.png") no-repeat ;
         width:100%; 
         overflow: hidden;
     }
@@ -28,6 +28,51 @@ session_start();
         width:90%; 
         margin-top:-440px;
         margin-left:767px;
+    }
+    @media(width:640px)
+    {
+        html 
+    {
+        background: url("img/medias/index.png") no-repeat ;
+        width:100%; 
+        overflow: hidden;
+    }
+        .placa_cabo
+        {
+            width:100%; 
+            margin-top:250px;
+            margin-left:200px;
+        }
+      
+    .placa_esquerda
+    {
+        width:100%; 
+        margin-top:-160px;
+        margin-left:943px;
+    }
+
+    .placa_direita
+    {
+        width:100%; 
+        margin-left:-943px;
+            
+    }
+    .mapa
+    {
+        margin-top:-216px;
+        font-size:30px;
+        margin-left:450px;
+    }
+    .logout
+    {
+        margin-top:30px;
+        font-size:30px;
+        margin-left:644px;
+    }
+    }
+    @media (width:)
+    {
+
     }
     .placa_direita
     {

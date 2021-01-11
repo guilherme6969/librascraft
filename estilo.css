@@ -1,31 +1,40 @@
-body{
-    background-color: #082767;
-}
-#teste{
-    width: 400px;
-    height: 100px;
-    background-image: url(logolc.png);
-    background-repeat: repeat;
-}
-#teste1{
-    width: 400px;
-    height: 150px;
-    background-image: url(logolc.png);
-    background-repeat: repeat-x;
-}
-#teste2{
-    width: 400px;
-    height: 150px;
-    background-image: url(logolc.png);
-    background-repeat: no-repeat;
-}
-#teste3{
-    width: 400px;
-    height: 100px;
-    background-image: url(logolc.png);
-    background-repeat: repeat-y;
-}
-#btn-modal-finalizar
+
+/* INDEX.PHP */
+.placa_esquerda
 {
-    display:none;
+    width:90%; 
+    margin-top:-440px;
+    margin-left:767px;
 }
+.placa_direita
+{
+    width:90%; 
+    margin-top:-200px;
+    margin-left:900px;
+}
+.mapa
+{
+    margin-top:-216px;
+    font-size:30px;
+    margin-left:450px;
+}
+.logout
+{
+    margin-top:30px;
+    font-size:30px;
+    margin-left:644px;
+}
+.login
+{
+    margin-top:-216px;
+    font-size:30px;
+    margin-left:430px;
+}
+.cadastro
+{
+    margin-top:30px;
+    font-size:27px;
+    margin-left:630px;
+}
+
+/* FIM INDEX.PHP */

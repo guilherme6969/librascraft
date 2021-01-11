@@ -1,9 +1,9 @@
 <?php
 include("conexao.php");
 include("menu.php");
-$pagina = $_GET["pagina"]; // ???????????
+$pagina = $_GET["pagina"]; // vem de submapa_casa
 
-$consulta = "SELECT palavra, video_sinal FROM palavra WHERE cod_subfase = $pagina";
+$consulta = "SELECT palavra, video_sinal, cod_subfase FROM palavra WHERE cod_subfase = $pagina";
 $resultado = mysqli_query($conexao,$consulta) or die("Erro na consulta");
 $vetor_palavra = "palavras = new Array("; // ??????????????????????????????????
 $vetor_video = "videos = new Array("; // ??????????????????????????????????
@@ -38,9 +38,8 @@ $linha = mysqli_fetch_assoc($resultado2);
 <style>
 	body 
 	{
-		background: url("img/casa/comodo/<?php echo $linha["nome"];?>.png") no-repeat center top fixed;
+		background: url("img/fundo/<?php echo $linha["nome"];?>.png") no-repeat center top fixed;
 		width:100%; 
-        overflow: hidden;
 	}
 </style>
 <script>
@@ -60,13 +59,15 @@ $linha = mysqli_fetch_assoc($resultado2);
             {
                 $("#anterior").hide();// ESCONDE BOTAO ANTERIOR
             }
-            if(posicao!=palavras.length) // tamanho do vetor
+            if(posicao<(palavras.length-1)) // tamanho do vetor
             {
                 $("#proximo").show();
+                $("#btn-modal-finalizar").hide(); // ESCONDE BOTAO FINALIZAR
             }
             else
             {
                 $("#proximo").hide();// ESCONDE BOTAO PROXIMO
+                $("#btn-modal-finalizar").show(); // MOSTRA BOTAO FINALIZAR
             }
 			palavra=palavras[posicao];
 			video=videos[posicao];
@@ -113,7 +114,11 @@ $linha = mysqli_fetch_assoc($resultado2);
 				troca_palavra(-1);
 			});
 
-		});
+	 // MODAL FINALIZAR ---------------------------------------------------------------------------------
+	 $("#btn-modal-finalizar").click(function(){
+                $("#modal-mensagem-finalizar").modal();
+                });
+            }); 
 		
 </script>
 </head>
@@ -124,7 +129,13 @@ $linha = mysqli_fetch_assoc($resultado2);
 			<div class="row">
 				<div class="col d-flex flex-column justify-content-center align-items-center">
 					<div class="col-12 border bg-white">
+					<div class="row">
+							<div class="col py-3 px-md-3  bg-light d-flex flex-column justify-content-center align-items-center" style="color:#828282;">
+								<h4>INTRODUÇÃO DO NÍVEL <?php echo $linha["nome"];?> </h4>
+							</div>
+						</div>
 						<div class="row">
+						
 							<div class="col  px-md-3 border bg-light d-flex flex-column justify-content-center align-items-center">
 							<!-- INICIO TABELA-->
 								<table border="1" class ="table-bordered" id="texto_palavra" style="text-align:center;text-transform:uppercase;"> 
@@ -151,7 +162,7 @@ $linha = mysqli_fetch_assoc($resultado2);
 							</div>
 						</div>
 							<!-- IMAGEM DO OBJETO -->
-							<div class="row mt-4 mx-md-n5">
+							<div class="row mx-md-n5">
 								<div class="col py-3 px-md-3 border bg-light d-flex flex-column justify-content-center align-items-center">
 									<img src="img/objetos/<?php echo $img_palavra;?>" class="rounded float-left" id="img_palavra" style="width:70%; margin-top:-30px;">
 								</div>
@@ -165,6 +176,7 @@ $linha = mysqli_fetch_assoc($resultado2);
 							<div class="col d-flex justify-content-center mt-2 align-items-center">
 								<button type="button" id="anterior" class="btn btn-lg btn-google btn-block w-50 text-uppercase" style="border-color:#828282;background-color:#828282;color:white; margin-left:-10px;">Anterior</button>
 								<button type="button" id="proximo" class="btn btn-lg btn-google btn-block w-50 text-uppercase" style="border-color:#828282;background-color:#828282;color:white; margin-left:50px;margin-top:-1px;">Próxima</button>
+								<button class="btn btn-lg btn-google btn-block w-50 text-uppercase" id="btn-modal-finalizar" style="border-color:darkgreen;background-color:green;color:white; margin-left:250px; margin-top:-47px;" data-toggle="modal" data-target="#modal-mensagem">FINALIZAR</button> <!-- BOTAO MODAL FINALIZAR -->
 							</div>
 					</div>
 				</div>
@@ -172,5 +184,26 @@ $linha = mysqli_fetch_assoc($resultado2);
 		</div>
 	</div>
 </div>
+<div class="modal fade" id="modal-mensagem-finalizar"> <!-- CONTEUDO MODAL FINALIZAR -->
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="card-body">
+                                            <h4 class="card-title text-center"style="color:#828282;">Parabéns, você concluiu a introdução do tema!</h4>
+                                            <h5 class="text-center"style="color:#828282;">Vamos colocar em prática oque aprendemos?</h5>
+
+                                            <br />
+                                            <button class="btn btn-lg btn-google btn-block text-uppercase" 
+											style="border-color:#828282;background-color:#828282;color:white;" 
+											type="button" onclick = "location.href='atividade_<?php echo $_SESSION['condicao_auditiva'];?>.php?pagina=<?php echo $pagina ?> '"><i class="fab fa-google mr-2"></i> Sim, vamos lá!</button>
+                                            <button class="btn btn-lg btn-google btn-block text-uppercase" 
+											style="border-color:#828282;background-color:#828282;color:white;" 
+											type="submit" onclick = "location.href='mapa.php'"><i class="fab fa-google mr-2"></i> Não, voltar para o mapa!</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
 </body>
 </html>

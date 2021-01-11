@@ -12,6 +12,12 @@
 			session_start();
 			$linha = mysqli_fetch_assoc($consultaA);
 			$_SESSION["autorizado"]=$linha["id_usuario"];
+			if($linha["condicao_auditiva"]=="s"){
+				$_SESSION["condicao_auditiva"]="surdo";
+			}
+			else{
+				$_SESSION["condicao_auditiva"]="ouvinte";
+			}
 			header("location: index.php");
 		} 
 		else

@@ -8,7 +8,7 @@ include("conexao.php");
     <style>
     body
     {
-        background:url("img/login_cadastro2.png")  no-repeat;
+        background:url("img/login_cadastro1.png")  no-repeat;
         background-size: 100%;
 
     }

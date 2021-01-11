@@ -5,10 +5,9 @@
 
 <style>
 	body {
-    background: url("img/submapa_abc.png") no-repeat;
-    width:100%; 
-    -webkit-backgroung-size:cover;
-    -moz-background-size:cover;
+    background: url("img/casa/comodo/letras.png") no-repeat center top fixed;
+		width:100%; 
+
   
 
     

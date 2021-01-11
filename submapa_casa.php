@@ -6,7 +6,7 @@
 <style>
 	body 
     {   
-        background: url("img/submapa_casa1.png") no-repeat;
+        background: url("img/fundo/submapa_casa.png") no-repeat;
         width:100%; 
         overflow: hidden;
     }
@@ -94,7 +94,7 @@
 <div class="container">
         <div class="row">
             <div class="sala">
-                <img id="btn-mensagem-sala" src="img/icones/casa/sala.png" data-toggle="modal" data-target="#modal-mensagem">
+                <img id="btn-mensagem-sala" src="img/icones/submapa_casa/sala.png" data-toggle="modal" data-target="#modal-mensagem">
             </div>   
         </div>    
 </div>
@@ -109,7 +109,7 @@
 
                 <br />
                 <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='introducao.php?pagina=1'"><i class="fab fa-google mr-2"></i> Introdução </button>
-                <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_sala.php'"><i class="fab fa-google mr-2"></i>Atividades</button>
+                <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_<?php echo $_SESSION['condicao_auditiva'];?>.php?pagina=1'"><i class="fab fa-google mr-2"></i>Atividades</button>
  
              </div>
              <div class="modal-footer">
@@ -124,7 +124,7 @@
 <div class="container">
         <div class="row">
             <div class="cozinha">
-                <img id="btn-mensagem-cozinha" src="img/icones/casa/cozinha1.png" data-toggle="modal" data-target="#modal-mensagem">
+                <img id="btn-mensagem-cozinha" src="img/icones/submapa_casa/cozinha.png" data-toggle="modal" data-target="#modal-mensagem">
             </div>   
         </div>    
 </div>
@@ -139,7 +139,7 @@
 
                 <br />
                 <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='introducao.php?pagina=2'"><i class="fab fa-google mr-2"></i> Introdução </button>
-                <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_cozinha.php'"><i class="fab fa-google mr-2"></i>Atividades</button>
+                <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_<?php echo $_SESSION['condicao_auditiva'];?>.php?pagina=2'"><i class="fab fa-google mr-2"></i>Atividades</button>
  
              </div>
              <div class="modal-footer">
@@ -154,7 +154,7 @@
 <div class="container">
         <div class="row">
             <div class="banheiro">
-                <img id="btn-mensagem-banheiro" src="img/icones/casa/banheiro1.png" data-toggle="modal" data-target="#modal-mensagem">
+                <img id="btn-mensagem-banheiro" src="img/icones/submapa_casa/banheiro.png" data-toggle="modal" data-target="#modal-mensagem">
             </div>   
         </div>    
 </div>
@@ -169,7 +169,7 @@
 
                 <br />
                 <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='introducao.php?pagina=3'"><i class="fab fa-google mr-2"></i> Introdução </button>
-                <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_banheiro.php'"><i class="fab fa-google mr-2"></i>Atividades</button>
+                <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_<?php echo $_SESSION['condicao_auditiva'];?>.php?pagina=3'"><i class="fab fa-google mr-2"></i>Atividades</button>
  
              </div>
              <div class="modal-footer">
@@ -183,7 +183,7 @@
 <div class="container">
         <div class="row">
             <div class="quarto">
-                <img id="btn-mensagem-quarto" src="img/icones/casa/quarto1.png" data-toggle="modal" data-target="#modal-mensagem">
+                <img id="btn-mensagem-quarto" src="img/icones/submapa_casa/quarto.png" data-toggle="modal" data-target="#modal-mensagem">
             </div>   
         </div>    
 </div>
@@ -198,7 +198,7 @@
 
                 <br />
                 <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='introducao.php?pagina=4'"><i class="fab fa-google mr-2"></i> Introdução </button>
-                <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_quarto.php'"><i class="fab fa-google mr-2"></i>Atividades</button>
+                <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_<?php echo $_SESSION['condicao_auditiva'];?>.php?pagina=4'"><i class="fab fa-google mr-2"></i>Atividades</button>
  
              </div>
              <div class="modal-footer">

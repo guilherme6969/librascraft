@@ -5,18 +5,17 @@
 
     $p= $_POST["pg"];
 
-    $sql = "SELECT * FROM palavra_cadastrada 
-            INNER JOIN fase ON palavra_cadastrada.cod_fase=fase.id_fase
-            LEFT JOIN subfase ON palavra_cadastrada.cod_subfase=subfase.id_subfase 
-            LEFT JOIN palavra ON palavra_cadastrada.cod_palavra=palavra.id_palavra";
+    $sql = "SELECT * FROM palavra
+            INNER JOIN fase ON palavra.cod_fase=fase.id_fase
+            LEFT JOIN subfase ON palavra.cod_subfase=subfase.id_subfase ";
 
     if(isset($_POST["nome_filtro"]))
     {
         $nome = $_POST["nome_filtro"];
-        $sql .= " WHERE cod_nivel LIKE '%$nome%'";
+        $sql .= " WHERE cod_fase LIKE '%$nome%'";
     }
 
-    $sql .= " ORDER BY cod_nivel LIMIT $p,5";
+    $sql .= " ORDER BY cod_fase LIMIT $p,5";
     $resultado = mysqli_query($conexao,$sql) or die(mysqli_error($conexao));
     while($linha=mysqli_fetch_assoc($resultado))
     {

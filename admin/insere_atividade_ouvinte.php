@@ -3,7 +3,6 @@
             include("conexao.php");
             
 			$cod_subfase = $_POST["subnivel"];
-			$enunciado = $_POST["enunciado"];
             $alternativa_a = $_POST["alternativa_a"];
             $alternativa_b = $_POST["alternativa_b"];
             $alternativa_c = $_POST["alternativa_c"];
@@ -12,9 +11,9 @@
 			
 			
 			$insert =
-			"INSERT INTO atividade_ouvinte(enunciado,alternativa_a,alternativa_b,alternativa_c,alternativa_d,cod_subfase)
+			"INSERT INTO atividade_ouvinte(alternativa_a,alternativa_b,alternativa_c,alternativa_d,cod_subfase)
 				 VALUES
-			 ('$enunciado','$alternativa_a','$alternativa_b','$alternativa_c','$alternativa_d','$cod_subfase')";
+			 ('$alternativa_a','$alternativa_b','$alternativa_c','$alternativa_d','$cod_subfase')";
 
 			mysqli_query($conexao,$insert) or die("ERRO AO INSERIR");
 			

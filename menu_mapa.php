@@ -64,7 +64,8 @@
                 <br />
                 <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='parametros_libras.php'"><i class="fab fa-google mr-2"></i> 5 Parametros da Libras</button>
                 <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='submapa_abc.php'"><i class="fab fa-google mr-2"></i> Introdução </button>
-                <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_a.php'"><i class="fab fa-google mr-2"></i>Atividades</button>
+                <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_<?php echo $_SESSION['condicao_auditiva'];?>.php?pagina=7'"><i class="fab fa-google mr-2"></i>Atividades Numeros</button>
+                <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_<?php echo $_SESSION['condicao_auditiva'];?>.php?pagina=8'"><i class="fab fa-google mr-2"></i>Atividades Letras</button>
  
              </div>
              <div class="modal-footer">

@@ -6,7 +6,7 @@
 	<style>
 	body 
     {
-        background: url("img/submapa_abc.png") no-repeat;
+        background: url("img/fundo/sub_abc.png") no-repeat;
         width:100%; 
         overflow: hidden;
     }
@@ -103,7 +103,7 @@
                                             <h5 class="text-center"style="color:#828282;">Vamos colocar em prática oque aprendemos?</h5>
 
                                             <br />
-                                            <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_numeral.php'"><i class="fab fa-google mr-2"></i> Sim, vamos lá!</button>
+                                            <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='atividade_<?php echo $_SESSION['condicao_auditiva'];?>.php?pagina=7'"><i class="fab fa-google mr-2"></i> Sim, vamos lá!</button>
                                             <button class="btn btn-lg btn-google btn-block text-uppercase" style="border-color:#828282;background-color:#828282;color:white;" type="submit" onclick = "location.href='mapa.php'"><i class="fab fa-google mr-2"></i> Não, voltar para o mapa!</button>
                                         </div>
                                         <div class="modal-footer">
