@@ -5,7 +5,7 @@
 
 <style>
 	body {
-    background: url("img/casa/comodo/letras.png") no-repeat center top fixed;
+    background: url("img/fundo/sub_abc.png") no-repeat center top fixed;
 		width:100%; 
 
   
@@ -15,7 +15,7 @@
 </style>
 </head>
 <body>
-<div class="container" 
+<div class="container" style="text-align:center;">
             <div class="row">
             <div class="card-body" style = "background-color:#F0F8FF;">
                     <h2 class="card-title text-center"style="color:#828282;">Conheça os 5 Parametros da Libras!</h2>

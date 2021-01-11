@@ -14,7 +14,7 @@ session_start();
 
 
 
-$consulta = "SELECT nome FROM usuario";
+$consulta = "SELECT nome FROM usuario  ";
 $resultado = mysqli_query($conexao,$consulta) or die("Erro na consulta");
 $linha = mysqli_fetch_assoc($resultado);
 ?>

@@ -1,7 +1,7 @@
 <style>
 .abc
 {
-    margin-top:10px;
+    margin-top:35px;
     margin-left:143px;
     opacity:1;
 }
@@ -11,7 +11,7 @@
     }
 .casa
 {
-    margin-top:174px;
+    margin-top:198px;
     margin-left:-70px;
     opacity:1;
 }

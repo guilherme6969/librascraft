@@ -12,7 +12,7 @@
     }
     .sala
     {
-        margin-top:44px;
+        margin-top:68px;
         margin-left:-27px;
         cursor:pointer;
         opacity:1;
