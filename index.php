@@ -10,7 +10,7 @@ else{
     $initial_scale="1";    
 } 
 
-
+session_cache_expire(1000);
 session_start();
 ?>
 <!DOCTYPE html>
