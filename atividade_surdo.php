@@ -12,7 +12,7 @@ $consulta = "SELECT id_palavra,palavra, video_sinal FROM palavra WHERE cod_subfa
 
 
 
-$resultado = mysqli_query($conexao,$consulta) or die("Erro na consulta");
+$resultado = mysqli_query($conexao,$consulta) or die("Erro na consulta".$consulta);
 $qtd = mysqli_num_rows($resultado);
 
 if($qtd>0){
@@ -98,14 +98,21 @@ if($qtd>0){
 		</div>
 	<p><br /><br /></p>
 	<script>
-
+	<?php
+		if($_GET["pagina"]=='7' || $_GET["pagina"]=='8'){
+			$tamanho_verificacao="0";
+		}
+		else{
+			$tamanho_verificacao="3";
+		}
+	?>
 	$(function(){
 		$(".resposta").focus(function(){
 			$("input[name='envia_resposta']").hide();
 		});
 		$(".resposta").keyup(function(){
 			p = $(this).val();			
-			if(p.length>1){
+			if(p.length><?php echo $tamanho_verificacao;?>){
 			post = {palavra:p}
 			$.post("cod_palavra.php",post,function(r){
 				console.log(r);
