@@ -9,7 +9,7 @@ if( $detect->isMobile()){
 else{
     $initial_scale="1";    
 } 
-session_cache_expire(1000);
+session_cache_expire(10000000);
 session_start();
 
 $id_usuario=$_SESSION["autorizado"];
