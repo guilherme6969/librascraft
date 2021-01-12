@@ -77,8 +77,7 @@ if($qtd>0){
 									
 									<input type="text" name="resposta" class="resposta form-control" placeholder="Digite aqui o que significa este símbolo..." />
 									<div id="msg_cod_palavra"></div>
-									<input type="button" name="verifica_resposta" value="Verificar Resposta" class="form-control btn-info " />
-									<input type="button" style="display:none;color:white;"  name="envia_resposta" value="Enviar Resposta" class="form-control btn-success" />
+									<input type="button" style="display:none;color:white;"  name="envia_resposta" value="Enviar Resposta" class="form-control btn-info " />
 									<input type='hidden' name='resposta_enviar' value='' />
 									<input type='hidden' name='resposta_correta' value='<?php echo $cod_correto;?>' />
 									<br />
@@ -112,12 +111,10 @@ if($qtd>0){
 		$(".resposta").focus(function(){
 			$("input[name='envia_resposta']").hide();
 		});
-		$("input[name='verifica_resposta']").click(function(){
-			
-			p = $(".resposta").val();			
+		$(".resposta").keyup(function(){
+			p = $(this).val();			
 			if(p.length><?php echo $tamanho_verificacao;?>){
 			post = {palavra:p}
-			
 			$.post("cod_palavra.php",post,function(r){				
 				if(r=="0"){					
 					$("input[name='envia_resposta']").hide();
@@ -126,10 +123,8 @@ if($qtd>0){
 				else{
 					$("#msg_cod_palavra").html("Palavra existente no sistema! Deseja enviar esta resposta?");
 					$("input[name='envia_resposta']").show();
-					$("input[name='envia_resposta']").show();
 					resp = r;					
 				}
-				
 			});
 			}			
 		});
