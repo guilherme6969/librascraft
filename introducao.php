@@ -87,6 +87,10 @@ $linha = mysqli_fetch_assoc($resultado2);
 					{
 						tr+="<td><div style='width:20px;'></div> </td>";
 					}
+					else if(palavra[i]=="-")
+					{
+						tr+="<td><div style='width:20px; font-size:30px;'>-</div> </td>";
+					}
 					else
 					{
 						tr+="<td><img src= 'img/alfabeto/"+palavra[i]+".gif' style='width:70px;' /></td>";
