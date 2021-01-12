@@ -54,7 +54,7 @@ or die(mysqli_error($conexao));
 
 
 /// Nota da subfase para o usuário
-$select = "SELECT COUNT(id_resposta) as qtd, cod_subfase FROM
+$select = "SELECT COUNT(resposta) as qtd, cod_subfase FROM
            resposta            
            where cod_usuario='".$_SESSION["autorizado"]."'
            AND resposta=cod_palavra
@@ -65,6 +65,7 @@ or die(mysqli_error($conexao));
    while($linha=mysqli_fetch_assoc($resultado)){
      $acerto_subfase_usuario[$linha["cod_subfase"]]=$linha["qtd"];
    }
+   
 /////////////////////////////////////////////////////////////////////////////
 
 
