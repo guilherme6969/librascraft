@@ -103,10 +103,11 @@ if($qtd>0){
 			$tamanho_verificacao="0";
 		}
 		else{
-			$tamanho_verificacao="3";
+			$tamanho_verificacao="2";
 		}
 	?>
 	$(function(){
+		resp = "";
 		$(".resposta").focus(function(){
 			$("input[name='envia_resposta']").hide();
 		});
@@ -114,8 +115,7 @@ if($qtd>0){
 			p = $(this).val();			
 			if(p.length><?php echo $tamanho_verificacao;?>){
 			post = {palavra:p}
-			$.post("cod_palavra.php",post,function(r){
-				console.log(r);
+			$.post("cod_palavra.php",post,function(r){				
 				if(r=="0"){					
 					$("input[name='envia_resposta']").hide();
 					$("#msg_cod_palavra").html("palavra não identificada...corrija a palavra");
@@ -123,22 +123,20 @@ if($qtd>0){
 				else{
 					$("#msg_cod_palavra").html("Palavra existente no sistema! Deseja enviar esta resposta?");
 					$("input[name='envia_resposta']").show();
-					$("input[name='envia_resposta']").click(function(){						
-						c = $("input[name='resposta_correta']").val();
-						sf = "<?php echo $_GET["pagina"];?>";
-						post = {resposta:r, correto:c,subfase:sf}
-						$.post("salva_resposta.php",post,function(r){
-							if(r=="1"){					
-								location.href='atividade_<?php echo $_SESSION['condicao_auditiva'];?>.php?pagina='+sf;
-							}
-							else{
-								console.log(r);
-							}
-						});			
-					});
+					resp = r;					
 				}
 			});
 			}			
+		});
+
+		$("input[name='envia_resposta']").click(function(){						
+			c = $("input[name='resposta_correta']").val();
+			sf = "<?php echo $_GET["pagina"];?>";
+			post = {resposta:resp, correto:c,subfase:sf};
+			console.log(post);
+			$.post("salva_resposta.php",post,function(r){				
+				location.href='atividade_<?php echo $_SESSION['condicao_auditiva'];?>.php?pagina='+sf;
+			});			
 		});
 		
 	});
