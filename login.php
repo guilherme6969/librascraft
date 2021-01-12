@@ -33,6 +33,14 @@ include("conexao.php");
             <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top:-80px;">
                 <div class="card card-signin my-5" style="border-color:#828282;">
+                <?php
+       
+                if(isset($_GET["sessao"])){
+                    echo "<div style='background-color:red;color:white;'>Sua autenticação expirou. Refaça o login!</div>";
+                }
+                
+                ?>
+
                 <div class="card-body">
                     <h5 class="card-title text-center"style="color:#828282;">Bem-vindo(a) ao LibrasCraft!</h5>
                     <form class="form-signin">

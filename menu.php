@@ -14,6 +14,9 @@ session_start();
 
 $id_usuario=$_SESSION["autorizado"];
 
+if(!$id_usuario)
+    header("location: login.php?sessao=1");
+
 $consulta = "SELECT nome FROM usuario WHERE id_usuario=$id_usuario";
 $resultado = mysqli_query($conexao,$consulta) or die("Erro na consulta");
 $linha = mysqli_fetch_assoc($resultado);
